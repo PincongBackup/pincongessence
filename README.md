@@ -1,9 +1,9 @@
 
-# 品葱搬运工搬运列表（json格式） && 再次备份
+# 品葱搬运工搬运列表（json格式）&& 再次备份
 
 ## 使用的自动备份脚本
 
-详见 https://github.com/PincongBackup/tools/blob/master/pincongessence/get_list.js
+详见 https://github.com/PincongBackup/tools/blob/master/pincongessence/get_list.js 和 https://github.com/PincongBackup/tools/blob/master/pincongessence/download.js
 
 ## 备注
 
