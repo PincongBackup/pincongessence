@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>品葱是否有可能遭到政府背景的黑客攻击？应该如何防范应对？ – Telegraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:site_name" content="Telegraph">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="品葱是否有可能遭到政府背景的黑客攻击？应该如何防范应对？">
+    <meta property="og:description" content="当然有这种可能性。连 GitHub 这样有巨大国际影响力的网站都会被国内的巨炮 DDoS，要搞掉几个程序员业余维护的社区从技术上来讲轻而易举。不过品葱的影响力目前还是太小，比我这个号注册的时候可能略微更活跃了一些；另外品葱上也没有像郭文贵一样的人物引发舆论地震，所以不会引起官方那么大的注意。
+当这个社区真有人气了，应对的方式也很简单。一般来讲，把网站放到 Cloudflare 的 CDN 后面可以有效缓解 DDoS 问题，他们对付这种事情有足够的经验。但本质上来说，这也是一种中心化的解决方案。
+（相对）去中心化的方案，最容易最可行的方法就是邮件列表。不过很多人应该都没有用过这个东西吧，特别是在国内的朋友，邮件用得很少，不太习惯。另外，使用邮件列表的话，有一些安全知识有所欠缺的网友可能会用自己国内的邮箱（或者暴露自己身份的邮箱）去订阅和发言，这会带来很多潜在的安全问题。
+另一个方案是，能否将品葱设计为一个可以在任何地方部署的系统，然后通过一个分布式网络互相同步？如果要做到这种目的，那么用户的认证不应该依赖于密码，而是惟一生成的一对公钥/私钥，在存取信息的时候都验证签名来防止数据伪造。但这样依旧不能够完全保证不会…">
+    <meta property="og:image" content="">
+    <meta property="article:published_time" content="2018-08-27T21:37:19+0000">
+    <meta property="article:modified_time" content="2018-08-27T21:37:19+0000">
+    <meta property="article:author" content="吴默 ">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="品葱是否有可能遭到政府背景的黑客攻击？应该如何防范应对？">
+    <meta name="twitter:description" content="当然有这种可能性。连 GitHub 这样有巨大国际影响力的网站都会被国内的巨炮 DDoS，要搞掉几个程序员业余维护的社区从技术上来讲轻而易举。不过品葱的影响力目前还是太小，比我这个号注册的时候可能略微更活跃了一些；另外品葱上也没有像郭文贵一样的人物引发舆论地震，所以不会引起官方那么大的注意。
+当这个社区真有人气了，应对的方式也很简单。一般来讲，把网站放到 Cloudflare 的 CDN 后面可以有效缓解 DDoS 问题，他们对付这种事情有足够的经验。但本质上来说，这也是一种中心化的解决方案。
+（相对）去中心化的方案，最容易最可行的方法就是邮件列表。不过很多人应该都没有用过这个东西吧，特别是在国内的朋友，邮件用得很少，不太习惯。另外，使用邮件列表的话，有一些安全知识有所欠缺的网友可能会用自己国内的邮箱（或者暴露自己身份的邮箱）去订阅和发言，这会带来很多潜在的安全问题。
+另一个方案是，能否将品葱设计为一个可以在任何地方部署的系统，然后通过一个分布式网络互相同步？如果要做到这种目的，那么用户的认证不应该依赖于密码，而是惟一生成的一对公钥/私钥，在存取信息的时候都验证签名来防止数据伪造。但这样依旧不能够完全保证不会…">
+    <meta name="twitter:image" content="">
+    <link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/images/favicon.png?1" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicon_2x.png?1" sizes="32x32">
+    <link href="/css/quill.core.min.css" rel="stylesheet">
+    <link href="/css/core.min.css?44" rel="stylesheet">
+  </head>
+  <body>
+    <div class="tl_page_wrap">
+      <div class="tl_page">
+        <main class="tl_article">
+          <header class="tl_article_header">
+            <h1 dir="auto">品葱是否有可能遭到政府背景的黑客攻击？应该如何防范应对？</h1>
+            <address dir="auto">
+              <a rel="author">吴默 </a><!--
+           --><time datetime="2018-08-27T21:37:19+0000">August 27, 2018</time>
+            </address>
+          </header>
+          <article id="_tl_editor" class="tl_article_content"><h1>品葱是否有可能遭到政府背景的黑客攻击？应该如何防范应对？<br></h1><address>吴默 <br></address><p>当然有这种可能性。连 GitHub 这样有巨大国际影响力的网站都会被国内的巨炮 DDoS，要搞掉几个程序员业余维护的社区从技术上来讲轻而易举。不过品葱的影响力目前还是太小，比我这个号注册的时候可能略微更活跃了一些；另外品葱上也没有像郭文贵一样的人物引发舆论地震，所以不会引起官方那么大的注意。</p><p>当这个社区真有人气了，应对的方式也很简单。一般来讲，把网站放到 Cloudflare 的 CDN 后面可以有效缓解 DDoS 问题，他们对付这种事情有足够的经验。但本质上来说，这也是一种中心化的解决方案。</p><p>（相对）去中心化的方案，最容易最可行的方法就是邮件列表。不过很多人应该都没有用过这个东西吧，特别是在国内的朋友，邮件用得很少，不太习惯。另外，使用邮件列表的话，有一些安全知识有所欠缺的网友可能会用自己国内的邮箱（或者暴露自己身份的邮箱）去订阅和发言，这会带来很多潜在的安全问题。</p><p>另一个方案是，能否将品葱设计为一个可以在任何地方部署的系统，然后通过一个分布式网络互相同步？如果要做到这种目的，那么用户的认证不应该依赖于密码，而是惟一生成的一对公钥/私钥，在存取信息的时候都验证签名来防止数据伪造。但这样依旧不能够完全保证不会有某个部署者恶意修改显示给用户的内容。（除非发布一个客户端程序用来显示，服务端只作为收发数据之用）</p><p>不过品葱离这一步还早着呢。现在最要紧的是提高社区人气。</p><p><br></p><p><br></p><p>资料来源: 品葱 </p><p><a href="https://www.pin-cong.com/p/122546/?s=125978" target="_blank">https://www.pin-cong.com/p/122546/?s=125978</a></p></article>
+          <div id="_tl_link_tooltip" class="tl_link_tooltip"></div>
+          <div id="_tl_tooltip" class="tl_tooltip">
+            <div class="buttons">
+              <span class="button_hover"></span>
+              <span class="button_group"><!--
+             --><button id="_bold_button"></button><!--
+             --><button id="_italic_button"></button><!--
+             --><button id="_link_button"></button><!--
+           --></span><!--
+           --><span class="button_group"><!--
+             --><button id="_header_button"></button><!--
+             --><button id="_subheader_button"></button><!--
+             --><button id="_quote_button"></button><!--
+           --></span>
+            </div>
+            <div class="prompt">
+              <span class="close"></span>
+              <div class="prompt_input_wrap"><input type="url" class="prompt_input" /></div>
+            </div>
+          </div>
+          <div id="_tl_blocks" class="tl_blocks">
+            <div class="buttons">
+              <button id="_image_button"></button><!--
+           --><button id="_embed_button"></button>
+            </div>
+          </div>
+          <aside class="tl_article_buttons">
+            <div class="account account_top"></div>
+            <button id="_edit_button" class="button edit_button">Edit</button><!--
+         --><button id="_publish_button" class="button publish_button">Publish</button>
+            <div class="account account_bottom"></div>
+            <div id="_error_msg" class="error_msg"></div>
+          </aside>
+        </main>
+      </div>
+    </div>
+    <div id="_tl_alerts" class="tl_alerts"></div>
+    <script>var T={"apiUrl":"https:\/\/edit.telegra.ph","datetime":1535405839,"pageId":"aa2d5e4c358bb6f5030e8"};(function(){var b=document.querySelector('time');if(b&&T.datetime){var a=new Date(1E3*T.datetime),d='January February March April May June July August September October November December'.split(' ')[a.getMonth()],c=a.getDate();b.innerText=d+' '+(10>c?'0':'')+c+', '+a.getFullYear()}})();</script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.selection.min.js"></script>
+    <script src="/js/autosize.min.js"></script>
+    <script src="/js/load-image.all.min.js?1"></script>
+    <script src="/js/quill.min.js?9"></script>
+    <script src="/js/core.min.js?57"></script>
+  </body>
+</html>

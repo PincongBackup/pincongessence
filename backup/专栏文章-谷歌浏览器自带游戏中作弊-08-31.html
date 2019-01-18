@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>专栏文章: 谷歌浏览器自带游戏中作弊 – Telegraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:site_name" content="Telegraph">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="专栏文章: 谷歌浏览器自带游戏中作弊">
+    <meta property="og:description" content="(想看更好的排版可去我博客上看)
+没网时，谷歌浏览器(以下简称为chrome)会出现一个恐龙奔跑游戏
+或打开 chrome://dino/ 进入游戏
+操作很简单，跳跃或下蹲避开障碍物，按Alt可以暂停
+那么如何在这个小游戏中作弊呢？
+审查网页
+这个游戏的动画引擎是canvas
+由于网页游戏(除了flash)的逻辑是用js实现，
+那我就在键盘事件中设置一个断点，就能从茫茫多的js代码中找到想要的函数
+结果发现在Runner对象内部处理掉键盘事件e
+找下Runner Object的源码
+js的类以前都是用函数实现，而js的函数有个toString方法看源码
+Runner函数源码一开始就是「单例模式」实现部分，
+注释上的Singleton就是单例的意思
+所以用Runner.instance_就能获取当前游戏对象
+不过Runner.toString出来的源码有点少，很可能不是完整的
+继续想办法看看页面的js源码在哪，结果发现来自VM...
+先阅读下VM前缀是什么意思 VM] file from javascript
+VM前缀的js代码可能在以下地方
+开发者工具的console内
+eval
+script标签内
+排除前两…">
+    <meta property="og:image" content="">
+    <meta property="article:published_time" content="2018-08-31T21:55:03+0000">
+    <meta property="article:modified_time" content="2018-08-31T21:56:40+0000">
+    <meta property="article:author" content="Python">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="专栏文章: 谷歌浏览器自带游戏中作弊">
+    <meta name="twitter:description" content="(想看更好的排版可去我博客上看)
+没网时，谷歌浏览器(以下简称为chrome)会出现一个恐龙奔跑游戏
+或打开 chrome://dino/ 进入游戏
+操作很简单，跳跃或下蹲避开障碍物，按Alt可以暂停
+那么如何在这个小游戏中作弊呢？
+审查网页
+这个游戏的动画引擎是canvas
+由于网页游戏(除了flash)的逻辑是用js实现，
+那我就在键盘事件中设置一个断点，就能从茫茫多的js代码中找到想要的函数
+结果发现在Runner对象内部处理掉键盘事件e
+找下Runner Object的源码
+js的类以前都是用函数实现，而js的函数有个toString方法看源码
+Runner函数源码一开始就是「单例模式」实现部分，
+注释上的Singleton就是单例的意思
+所以用Runner.instance_就能获取当前游戏对象
+不过Runner.toString出来的源码有点少，很可能不是完整的
+继续想办法看看页面的js源码在哪，结果发现来自VM...
+先阅读下VM前缀是什么意思 VM] file from javascript
+VM前缀的js代码可能在以下地方
+开发者工具的console内
+eval
+script标签内
+排除前两…">
+    <meta name="twitter:image" content="">
+    <link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/images/favicon.png?1" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicon_2x.png?1" sizes="32x32">
+    <link href="/css/quill.core.min.css" rel="stylesheet">
+    <link href="/css/core.min.css?44" rel="stylesheet">
+  </head>
+  <body>
+    <div class="tl_page_wrap">
+      <div class="tl_page">
+        <main class="tl_article">
+          <header class="tl_article_header">
+            <h1 dir="auto">专栏文章: 谷歌浏览器自带游戏中作弊</h1>
+            <address dir="auto">
+              <a rel="author">Python</a><!--
+           --><time datetime="2018-08-31T21:55:03+0000">August 31, 2018</time>
+            </address>
+          </header>
+          <article id="_tl_editor" class="tl_article_content"><h1>专栏文章: 谷歌浏览器自带游戏中作弊<br></h1><address>Python<br></address><p>(想看更好的排版可去我<a href="https://pymongo.github.io/#/doc/project/chrome-game-cheat" target="_blank">博客</a>上看)</p><figure><img src="/file/bd7e6f96dea957ef25ab9.png"><figcaption></figcaption></figure><p>没网时，谷歌浏览器(以下简称为chrome)会出现一个恐龙奔跑游戏</p><p>或打开 chrome://dino/ 进入游戏</p><p>操作很简单，跳跃或下蹲避开障碍物，按Alt可以暂停</p><p>那么如何在这个小游戏中作弊呢？</p><h4 id="审查网页">审查网页</h4><p>这个游戏的动画引擎是canvas</p><figure><img src="/file/c6852aaff23626a7bed73.png"><figcaption></figcaption></figure><p>由于网页游戏(除了flash)的逻辑是用js实现，</p><p>那我就在键盘事件中设置一个断点，就能从茫茫多的js代码中找到想要的函数</p><figure><img src="/file/669348d6987fcb10a61b9.gif"><figcaption></figcaption></figure><p>结果发现在Runner对象内部处理掉键盘事件e</p><h4 id="找下Runner-Object的源码">找下Runner Object的源码</h4><p>js的类以前都是用函数实现，而js的函数有个toString方法看源码</p><figure><img src="/file/b454dcfcf5786dbc555e1.png"><figcaption></figcaption></figure><p>Runner函数源码一开始就是「单例模式」实现部分，</p><p>注释上的Singleton就是单例的意思</p><p>所以用Runner.instance_就能获取当前游戏对象</p><p>不过Runner.toString出来的源码有点少，很可能不是完整的</p><p>继续想办法看看页面的js源码在哪，结果发现来自VM...</p><figure><img src="/file/35536adbd9473f15db0d4.png"><figcaption></figcaption></figure><p>先阅读下VM前缀是什么意思 VM] file from javascript</p><p>VM前缀的js代码可能在以下地方</p><ul><li>开发者工具的console内</li><li>eval</li><li>script标签内</li></ul><p>排除前两种可能，很快在第四个script标签内找到了游戏源码</p><figure><img src="/file/81c09ab28787e65c547a5.png"><figcaption></figcaption></figure><p>从这样优秀的源码中还是能学到不少新东西</p><p>结果源码太长还是看不全，只好另存为html文件用IDE打开看</p><h4 id="游戏作弊">游戏作弊</h4><p>如何让小恐龙&quot;无敌&quot;，碰到敌人也不死掉？</p><p>原来触发gameover后会结束游戏，现在只要把gameover函数改为空</p><p>即便碰到障碍物触发了gameover也会当做无事发生继续游戏</p><figure><img src="/file/577a4e2b68fc3005ce7f2.png"><figcaption></figcaption></figure><figure><img src="/file/663b2569c2c9a21c8a49a.png"><figcaption></figcaption></figure><figure><img src="/file/ced0babfbb2e36438f4d7.gif"><figcaption></figcaption></figure><p>参考文章: <a href="https://mathewsachin.github.io/blog/2016/11/05/chrome-dino-hack.html" target="_blank">chrome-dino-hack</a></p><p><br></p><p><br></p><p> 资料来源: 品葱</p><p><a href="https://www.pin-cong.com/p/127548/" target="_blank">https://www.pin-cong.com/p/127548/</a></p><p><br></p><p><br></p><p><br></p></article>
+          <div id="_tl_link_tooltip" class="tl_link_tooltip"></div>
+          <div id="_tl_tooltip" class="tl_tooltip">
+            <div class="buttons">
+              <span class="button_hover"></span>
+              <span class="button_group"><!--
+             --><button id="_bold_button"></button><!--
+             --><button id="_italic_button"></button><!--
+             --><button id="_link_button"></button><!--
+           --></span><!--
+           --><span class="button_group"><!--
+             --><button id="_header_button"></button><!--
+             --><button id="_subheader_button"></button><!--
+             --><button id="_quote_button"></button><!--
+           --></span>
+            </div>
+            <div class="prompt">
+              <span class="close"></span>
+              <div class="prompt_input_wrap"><input type="url" class="prompt_input" /></div>
+            </div>
+          </div>
+          <div id="_tl_blocks" class="tl_blocks">
+            <div class="buttons">
+              <button id="_image_button"></button><!--
+           --><button id="_embed_button"></button>
+            </div>
+          </div>
+          <aside class="tl_article_buttons">
+            <div class="account account_top"></div>
+            <button id="_edit_button" class="button edit_button">Edit</button><!--
+         --><button id="_publish_button" class="button publish_button">Publish</button>
+            <div class="account account_bottom"></div>
+            <div id="_error_msg" class="error_msg"></div>
+          </aside>
+        </main>
+      </div>
+    </div>
+    <div id="_tl_alerts" class="tl_alerts"></div>
+    <script>var T={"apiUrl":"https:\/\/edit.telegra.ph","datetime":1535752503,"pageId":"aa4d7bbbc5c32242fa42d"};(function(){var b=document.querySelector('time');if(b&&T.datetime){var a=new Date(1E3*T.datetime),d='January February March April May June July August September October November December'.split(' ')[a.getMonth()],c=a.getDate();b.innerText=d+' '+(10>c?'0':'')+c+', '+a.getFullYear()}})();</script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.selection.min.js"></script>
+    <script src="/js/autosize.min.js"></script>
+    <script src="/js/load-image.all.min.js?1"></script>
+    <script src="/js/quill.min.js?9"></script>
+    <script src="/js/core.min.js?57"></script>
+  </body>
+</html>
