@@ -2,39 +2,69 @@
 [quote]483. 专栏文章: 谷歌浏览器自带游戏中作弊[/quote]
 
 [b]专栏文章: 谷歌浏览器自带游戏中作弊[/b]
+
 (想看更好的排版可去我[url=https://pymongo.github.io/#/doc/project/chrome-game-cheat]博客[/url]上看)
+
 [img]https://i.imgur.com/F39c8nB.png[/img]
+
 没网时，谷歌浏览器(以下简称为chrome)会出现一个恐龙奔跑游戏
+
 或打开 chrome://dino/ 进入游戏
+
 操作很简单，跳跃或下蹲避开障碍物，按Alt可以暂停
+
 那么如何在这个小游戏中作弊呢？
 
 [b]审查网页[/b]
+
 这个游戏的动画引擎是canvas
+
 [img]https://i.imgur.com/eBZkgaM.png[/img]
+
 由于网页游戏(除了flash)的逻辑是用js实现，
+
 那我就在键盘事件中设置一个断点，就能从茫茫多的js代码中找到想要的函数
+
 [img]https://i.imgur.com/MxdnChO.gif[/img]
+
 结果发现在Runner对象内部处理掉键盘事件e
 
 [b]找下Runner Object的源码[/b]
+
 js的类以前都是用函数实现，而js的函数有个toString方法看源码
+
 [img]https://i.imgur.com/m5t0LIS.png[/img]
+
 Runner函数源码一开始就是「单例模式」实现部分，
+
 注释上的Singleton就是单例的意思
+
 所以用Runner.instance_就能获取当前游戏对象
+
 不过Runner.toString出来的源码有点少，很可能不是完整的
+
 继续想办法看看页面的js源码在哪，结果发现来自VM...
+
 [img]https://i.imgur.com/6fJVUG0.png[/img]
+
 先阅读下VM前缀是什么意思 VM] file from javascript
+
 VM前缀的js代码可能在以下地方
+
 [ul][li]开发者工具的console内[/li]
+
 [li]eval[/li]
+
 [li]script标签内[/li]
+
 [/ul]
+
 排除前两种可能，很快在第四个script标签内找到了游戏源码
+
 [img]https://i.imgur.com/DGWPVFM.png[/img]
+
 从这样优秀的源码中还是能学到不少新东西
+
 结果源码太长还是看不全，只好另存为html文件用IDE打开看
 
 [b]游戏作弊[/b]
@@ -43,13 +73,18 @@ VM前缀的js代码可能在以下地方
 [i]@Python：[/i]
 
 如何让小恐龙"无敌"，碰到敌人也不死掉？
+
 原来触发gameover后会结束游戏，现在只要把gameover函数改为空
+
 即便碰到障碍物触发了gameover也会当做无事发生继续游戏
+
 [img]https://i.imgur.com/ZGhOjVA.png[/img][img]https://i.imgur.com/uuaPOo7.png[/img][img]https://i.imgur.com/PmYpPe4.gif[/img]
+
 参考文章: [url=https://mathewsachin.github.io/blog/2016/11/05/chrome-dino-hack.html]chrome-dino-hack[/url]
 
 
 资料来源: 品葱
+
 [url=https://www.pin-cong.com/p/127548/]https://www.pin-cong.com/p/127548/[/url]
 
 

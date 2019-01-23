@@ -7,52 +7,82 @@
 [i]@Python：[/i]
 
 我博客[url=https://pymongo.github.io/#/]pymongo.github.io[/url]用的是docsify框架
+
 而docsify框架拷贝了vue文档的css
+
 而vue.css中有这么一行
+
 @import url("https://fonts.googleapis.com
+
 这是引用谷歌字体库的代码
+
 由于众所周知的原因, 带google的域名基本都被墙了
 
 有同学跟我反馈说, 我博客加载很慢
+
 我想可能是谷歌字体库被墙的原因, 断开翻墙, 测试, 果然是谷歌字体库的问题
 
 网站上线时给别人看的, 不是说我自己能翻墙所以网站用谷歌字体库
+
 要是hr或者猎头看到我的博客网站, 点进来发现加载很慢/字体出错, 损失可很大
 
 最简单的解决方案:
+
 我硬是把用到的20几个谷歌字体库全部下载下来
+
 挨个修改CSS中引用字体的链接, 纯粹是个体力活但很有效
+
 [img]https://i.imgur.com/hD8DiuZ.png[/img]
+
 缺点: 文件名全是一些哈希值, 可读性差, 需要重构, 这也是我发文的原因
 
 解决方案二:
+
 某知名大学提供的字体库镜像
+
 缺点: 无法离线使用
 
 解决方案三:
+
 那我就看看docsify和vue分别是怎么解决的
+
 查看docsify源码, 照搬vue的css并没解决字体库被墙
+
 那就只能看看vue怎么解决
 
 英文版的vue文档用的还是谷歌字体库
+
 那就看中文版vue文档的相应CSS代码
+
 [img]https://i.imgur.com/o8EjZji.png[/img]
+
 可见偷懒开发者们直接复制英文版的css
+
 然后把所有 谷歌字体库的代码 【注释掉】了
 
 进一步分析字体库来源
+
 英文的vue文档
+
 [img]https://i.imgur.com/HE7tl2e.png[/img]
+
 可见英文vue文档字体来源真的是谷歌
+
 [img]https://i.imgur.com/xLeC1AN.png[/img]
+
 中文的vue字体来源只能放在服务器上面了
 
 总结
+
 谷歌字体库这种很多人用的东西有现成解决方案(例如vue中文文档)
+
 而某些用到githubCDN的js库真的很绝望, cdn.git被墙, 网上也没太多相关信息可以借鉴
+
 最后我只好用一个缓兵之计暂时解决掉githubCDN被墙
+
 如此多优秀的开源软件都被墙, 做站长真的不容易
 
 
 资料来源: 品葱
+
 [url=https://www.pin-cong.com/p/130606/]https://www.pin-cong.com/p/130606/[/url]
